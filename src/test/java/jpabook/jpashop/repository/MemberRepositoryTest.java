@@ -19,7 +19,7 @@ class MemberRepositoryTest {
     public void testMember() throws Exception {
         //given
         Member member = new Member();
-        member.setUsername("memberA");
+        member.setName("memberA");
 
         //when
         Long savedId = memberRepository.save(member);
@@ -28,7 +28,7 @@ class MemberRepositoryTest {
         //then
         assertThat(savedId).isEqualTo(member.getId());
         assertThat(findMember.getId()).isEqualTo(savedId);
-        assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
+        assertThat(findMember.getName()).isEqualTo(member.getName());
         assertThat(findMember).isEqualTo(member); // 한 Transactional 안에서는 같은 식별자를 가진 Entity는 같은 Entity라 판단한다.
     }
 
