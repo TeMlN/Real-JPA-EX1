@@ -3,7 +3,6 @@ package jpabook.jpashop.service;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,12 +22,12 @@ public class MemberService {
      */
     @Transactional
     public Long join(Member member) {
-        validateDuplidateMember(member); //중복회원 검증 로직
+        validateDuplicateMember(member); //중복회원 검증 로직
         memberRepository.save(member);
         return member.getId();
     }
 
-    private void validateDuplidateMember(Member member) {
+    private void validateDuplicateMember(Member member) {
         //Exception
         List<Member> findMembers = memberRepository.findByName(member.getName());
         if (!findMembers.isEmpty()) {
