@@ -1,19 +1,19 @@
 spring:
-  datasource:
-    url: jdbc:h2:mem:test
-    driver-class-name: org.h2.Driver
-    password:
-    username: sa
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
 
-  jpa:
-    hibernate:
-      ddl-auto: create
-    properties:
-      hibernate:
-#        show_sql: true // sout으로 찍기때문에 log를 사용하는 org.hibernate.SQL: debug 를 사용하자
-        format_sql: true
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    properties:
+#      hibernate:
+#        show_sql: true
+#        format_sql: true
+#    open-in-view: false
 
-logging:
-  level:
-    org.hibernate.SQL: debug
-    org.hibernate.type: trace
+logging.level:
+  org.hibernate.SQL: debug
+#  org.hibernate.type: trace

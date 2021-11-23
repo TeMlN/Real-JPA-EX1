@@ -1,19 +1,18 @@
 spring:
   datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
     username: sa
     password:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:tcp://localhost/~/jpashop
 
   jpa:
     hibernate:
       ddl-auto: create
     properties:
       hibernate:
-#        show_sql: true // sout으로 찍기때문에 log를 사용하는 org.hibernate.SQL: debug 를 사용하자
+        show_sql: true
         format_sql: true
 
-logging:
-  level:
+  logging.level:
     org.hibernate.SQL: debug
-    org.hibernate.type: trace
+    # org.hibernate.type :trace  # 파라미터 바인딩된 부분까지 나온다.
