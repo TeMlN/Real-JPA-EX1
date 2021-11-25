@@ -14,9 +14,9 @@ public class ItemRepository {
     private final EntityManager em;
 
     public void save(Item item) {
-        if (item.getId() == null) {
+        if (item.getId() == null) { //새롭게 등록된 item이라면? 바로 persist즉 수정이 아닌, 등록
             em.persist(item);
-        } else {
+        } else { //새롭개 등록된 item이 아니라면 em.merge(item)작동
             em.merge(item);
         }
     }
