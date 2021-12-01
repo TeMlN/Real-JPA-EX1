@@ -30,6 +30,10 @@ public class ItemService {
         //여기서 return findItem 을 한다면 em.merge()와 동일
     }
 
+    public void deleteItem(Long itemId) {
+        itemRepository.delete(itemId);
+    }
+
     public List<Item> findItems() {
         return itemRepository.findAll();
     }
