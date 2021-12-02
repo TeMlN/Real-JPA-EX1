@@ -30,6 +30,7 @@ public class ItemService {
         //여기서 return findItem 을 한다면 em.merge()와 동일
     }
 
+    @Transactional
     public void deleteItem(Long itemId) {
         itemRepository.delete(itemId);
     }
