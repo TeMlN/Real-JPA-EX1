@@ -32,6 +32,7 @@ public class ItemRepository {
 
     public void delete(Long id) {
         em.createQuery("delete from Item i where i.id = :id")
-                .setParameter("id", id);
+                .setParameter("id", id)
+                .executeUpdate();
     }
 }
