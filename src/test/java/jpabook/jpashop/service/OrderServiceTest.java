@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Transactional
-class OrderServiceTest {
+class  OrderServiceTest {
 
     @Autowired EntityManager em;
     @Autowired OrderService orderService;
